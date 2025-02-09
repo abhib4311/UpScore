@@ -1,0 +1,39 @@
+# Node modules
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+debug.log
+error.log
+
+# Database files
+*.sqlite
+*.sqlite3
+dump.rdb
+data/
+*.pem
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+
+# Build and deployment
+dist/
+build/
+coverage/
+
+# Misc
+*.zip
+*.tar
+*.bak
