@@ -35,7 +35,9 @@ const Navbar = () => {
         
         {/* Navbar links */}
         <div className={`${isMobileMenuOpen ? "block" : "hidden"} md:flex md:items-center md:space-x-8 w-full md:w-auto`}>
+
           <ul className="flex flex-col md:flex-row md:space-x-8 p-4 md:p-0 mt-4 md:mt-0 border md:border-0 rounded-lg bg-gray-50 md:bg-white ">
+
             
             {/* Dropdown */}
             

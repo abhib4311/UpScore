@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import CTAButton from "../components/CommonCom/Button"; // Importing CTAButton
 import { useNavigate } from "react-router-dom";
 
+
 const user = {
   name: "John Doe",
   creditScore: 580,
@@ -48,6 +49,7 @@ const Dashboard = () => {
               </p>
             </div>
           </div>
+
           <div className="flex justify-between gap-4">
             <CTAButton active={true} onClick={() => alert("Downloading Report")}>
               Download Report <AiOutlineDownload className="inline ml-1 text-lg" />
@@ -55,6 +57,7 @@ const Dashboard = () => {
           <CTAButton active={true} onClick={() => navigate("/credit-report")}>
       View Credit Report
     </CTAButton>
+
           </div>
         </motion.div>
 
@@ -92,6 +95,7 @@ const Dashboard = () => {
 // Reusable Info Card Component with additional details
 const InfoCard = ({ icon, title, subtitle, description, extraPoints, buttonText }) => {
   return (
+
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -124,6 +128,7 @@ const InfoCard = ({ icon, title, subtitle, description, extraPoints, buttonText 
         </ul>
 
         <CTAButton active={true} onClick={() => alert(buttonText)}>{buttonText}</CTAButton>
+
       </div>
     </motion.div>
   );
