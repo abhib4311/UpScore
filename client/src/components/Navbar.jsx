@@ -1,100 +1,89 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "./CommonCom/Logo";
-import CTAButton from "./CommonCom/Button";
-// import UserIcon from "./CommonCom/UserIcon";
+import { FaBars } from "react-icons/fa";
+import { RiArrowDropDownLine , RiArrowDropUpLine} from "react-icons/ri";
+import Button from "./CommonCom/Button";
+
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const token = localStorage.getItem("authToken");
-    setIsLoggedIn(!!token); // Convert token existence to boolean
-  }, []);
-
-  const handleCTAClick = () => {
-    navigate(isLoggedIn ? "/dashboard" : "/login");
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem("authToken");
-    setIsLoggedIn(false);
-    navigate("/login");
-  };
 
   return (
-    <nav className="bg-white border-gray-200">
+
+
+    <nav className="bg-white border-gray-200 sticky top-0 z-50 shadow-md">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Logo />
-        <div className="flex md:order-2 space-x-3 md:space-x-0">
-          {isLoggedIn ? (
-            // <UserIcon isLoggedIn={isLoggedIn} onLogout={handleLogout} />
-            <CTAButton active={true} onClick={handleLogout}>
-              Logout
-            </CTAButton>
-          ) : (
-            <CTAButton active={true} onClick={handleCTAClick}>
-              Get Started
-            </CTAButton>
-          )}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-            aria-controls="navbar-cta"
-            aria-expanded={isOpen}
-          >
-            <span className="sr-only">Open main menu</span>
-            <svg
-              className="w-5 h-5"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${
-            isOpen ? "block" : "hidden"
-          }`}
-          id="navbar-cta"
+        <div className="flex md:order-2">
+            <Button onClick={() => navigate("/login")} active={true}>
+              <div className="flex items-center cursor-pointer ">
+                Sign in
+                {/* <FaArrowRight /> */}
+              </div>
+            </Button>
+          </div>
+        {/* Mobile menu button */}
+        <button 
+          onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+          className="md:hidden p-2 items-center justify-center text-gray-500 rounded-lg hover:bg-green-500 focus:outline-none"
         >
-          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 md:flex-row md:mt-0 md:border-0 md:bg-white">
-            <li>
-              <Link
-                to="/about"
-                className="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/services"
-                className="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600"
-              >
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/contact"
-                className="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600"
-              >
-                Contact
-              </Link>
-            </li>
+          <FaBars className="text-3xl"/>
+        </button>
+        
+        {/* Navbar links */}
+        <div className={`${isMobileMenuOpen ? "block" : "hidden"} md:flex md:items-center md:space-x-8 w-full md:w-auto`}>
+          <ul className="flex flex-col md:flex-row md:space-x-8 p-4 md:p-0 mt-4 md:mt-0 border md:border-0 rounded-lg bg-gray-50 md:bg-white ">
+            
+            {/* Dropdown */}
+            
+          <li className="relative">
+            <div
+              onMouseEnter={() => setDropdownOpen(true)}
+              onMouseLeave={() => setDropdownOpen(false)}
+              className="relative inline-block"
+            >
+              <button className="flex items-center py-2 px-3 text-gray-900 md:hover:text-green-500">
+                Dropdown
+                {isDropdownOpen ? (
+                  <RiArrowDropDownLine className="text-xl" />
+                ) : (
+                  <RiArrowDropUpLine className="text-xl" />
+                )}
+              </button>
+
+              {isDropdownOpen && (
+                <div className="absolute bg-white  shadow-md rounded-lg w-44">
+                  <ul className="py-2 text-sm text-gray-700 ">
+                    <li>
+                      <Link to="/dashboard" className="block px-4 py-2 hover:bg-gray-200">
+                        Dashboard
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/profile" className="block px-4 py-2 hover:bg-gray-200 ">
+                        Profile
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/earnings" className="block px-4 py-2 hover:bg-gray-200 ">
+                        Earnings
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
+          </li>
+
+            
+            <li><a href="#" className="block py-2 px-3 text-gray-900  md:hover:text-green-500 ">Services</a></li>
+            <li><a href="#" className="block py-2 px-3 text-gray-900  md:hover:text-green-500 ">Contact</a></li>
           </ul>
         </div>
+        
       </div>
     </nav>
   );
