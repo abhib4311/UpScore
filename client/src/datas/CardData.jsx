@@ -9,37 +9,37 @@ import FP from "../../public/Icons/Section_Icons/FP.png";
 
 const cardData = [
     {
-      icon: DC01,
+      icon: "./Icons/Section_Icons/FP.png",
       heading: "Debt Counselling",
       para: "Help clients improve their credit scores by providing personalized financial advice",
       link: "/login"
     },
     {
-      icon: LS,
+      icon: "./Icons/Section_Icons/LS.png",
       heading: "Legal support",
       para: "Help clients improve their credit scores by providing personalized financial advice",
       link: "/invest"
     },
     {
-      icon: AE,
+      icon: "./Icons/Section_Icons/AE.png",
       heading: "Affordable EMI",
       para: "Help clients improve their credit scores by providing personalized financial advice",
       link: "/loans"
     },
     {
-      icon: DC02,
+      icon: "./Icons/Section_Icons/DC02.png",
       heading: "Debt conslidation",
       para: "Guide clients in managing their finances effectively for a stable future",
       link: "/coaching"
     },
     {
-      icon: DS,
+      icon: "./Icons/Section_Icons/DS.png",
       heading: "Debt settlment",
       para: "Assist clients in finding the best loan options with favorable terms",
       link: "/loans"
     },
     {
-      icon: FP,
+      icon: "./Icons/Section_Icons/FP.png",
       heading: "Financial Planning",
       para: "Guide clients in managing their finances effectively for a stable future",
       link: "/coaching"
