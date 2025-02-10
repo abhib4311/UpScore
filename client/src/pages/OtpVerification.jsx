@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import CTAButton from "../components/CommonCom/Button";
+import Button from "../components/CommonCom/Button";
 const OtpVerification = () => {
   const [searchParams] = useSearchParams();
   const phone = searchParams.get("phone"); // Extract phone number
@@ -100,9 +100,9 @@ const OtpVerification = () => {
         {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
         {message && <p className="text-green-500 text-sm mt-2">{message}</p>}
   
-        <CTAButton active={!loading} onClick={handleVerify}>
+        <Button active={!loading} onClick={handleVerify}>
           {loading ? "Verifying..." : "Verify OTP"}
-        </CTAButton>
+        </Button>
 
         <p className="text-gray-500 mt-4 text-sm">
           Didn’t receive the OTP?{" "}

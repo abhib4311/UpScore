@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import LoginImage from "/Images/Login.jpg";
 import Logo from "../components/CommonCom/Logo";
-import CTAButton from "../components/CommonCom/Button";
+import Button from "../components/CommonCom/Button";
 
 const Login = () => {
   const [name, setName] = useState("");
@@ -118,9 +118,9 @@ const Login = () => {
 
               {/* Submit Button */}
               <div className="w-full text-center">
-                <CTAButton active={!loading} onClick={handleSubmit}>
+                <Button active={!loading} onClick={handleSubmit}>
                   {loading ? "Sending OTP..." : "Sign in"}
-                </CTAButton>
+                </Button>
               </div>
             </form>
           </div>

@@ -1,4 +1,4 @@
-const CTAButton = ({ active, onClick, children }) => {
+const Button = ({ active, onClick, children }) => {
   return (
     <button
       onClick={onClick}
@@ -12,4 +12,4 @@ const CTAButton = ({ active, onClick, children }) => {
   );
 };
 
-export default CTAButton;
+export default Button;

@@ -1,16 +1,26 @@
 import React from "react";
-import CTAButton from "../Button";
+import Button from "../../CommonCom/Button";
 import { FaArrowRight } from "react-icons/fa";
-import Hero02 from "../../../../public/Images/hero02.png";
-import speedometer from "../../../../public/Icons/speedometer.png";
+import CTAStats from "../../CommonCom/Stats";
+import statsData from "../../../datas/StatsData";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection02 = () => {
+  const isLoggedIn = false; // Replace with actual auth check
+  const navigate = useNavigate();
+  const handleButtonClick = () =>{
+    if (isLoggedIn) {
+      navigate("/dashboard");
+    } else {  
+      navigate("/login");
+    }
+  }
   return (
-    <div className=" flex-col sm:flex-row">
-      <h1 className="text-3xl ml-100 font-semibold mb-1 mt-20 w-120 text-center justify-center text-gray-900">
+    <div className=" flex-col  sm:flex-row ">
+      <h1 className="text-5xl font-bold text-gray-900  ml-50  mb-1 mt-20 w-200 text-center ">
         You're Just a Few Steps Away from Financial Freedom!
       </h1>
-      <div className="flex flex-col lg:flex-row gap-0 items-center  ">
+      <div className="flex flex-col lg:flex-row gap-0 items-center w-11/12 mx-auto">
         <div className="lg:w-[50%] flex gap-15 flex-col items-start">
           <p className="font-medium text-xl text-justify w-[60%] text-gray-600">
             We understand the burden of debt, and we're here to guide you toward
@@ -19,26 +29,39 @@ const HeroSection02 = () => {
           </p>
 
           <div className="w-fit mt-0">
-            <CTAButton active={true} linkto={"/login"}>
-              <div className="flex items-center gap-3">
+            <Button active={true} onClick={handleButtonClick}>
+              <div className="flex items-center gap-3 cursor-pointer">
                 Get Your Free Debt Assessment Now
                 <FaArrowRight />
               </div>
-            </CTAButton>
+            </Button>
           </div>
         </div>
 
-        <div className="lg:w-[40%] mt-10 ml-2 min-w-[300px]">
+        <div className="lg:w-[40%] mt-10  min-w-[300px]">
           <img
-            src={Hero02}
+            src= "./Images/Hero02.png"
             alt="image"
             className="shadow-white shadow-[-20px_-20px_0_0] w-2xl"
           />
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row gap-0 items-center bg-green-500 text-white">    
-        hh
+
+      <div className="flex flex-col lg:flex-row   items-center bg-green-500 text-white w-full mt-5 mx-auto max-w-screen-xl ">    
+        {statsData.map((stat, index) =>{
+            return(
+                <CTAStats key = {index} icon = {stat.icon}>
+                <div>
+                    <p className="text-lg">{stat.para}</p> 
+                    <p className="text-2xl font-bold">{stat.heading}</p>
+                </div>
+                </CTAStats>
+            )
+        })
+
+        }
       </div>
+
     </div>
   );
 };

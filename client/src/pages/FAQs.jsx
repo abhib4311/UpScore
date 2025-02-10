@@ -9,9 +9,9 @@ const FAQs = () => {
 
   const faqItems = [
     {
-      title: "What is DebtFree?",
+      title: "What is UpScore?",
       content:
-        "DebtFree is a financial strategy or state where an individual, business, or entity has no outstanding debts, meaning they have fully repaid all loans, credit balances, or financial obligations.",
+        "UpScore is a financial strategy or state where an individual, business, or entity has no outstanding debts, meaning they have fully repaid all loans, credit balances, or financial obligations.",
     },
     {
       title: "What is a Credit Score?",
