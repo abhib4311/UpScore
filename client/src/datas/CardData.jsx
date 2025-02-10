@@ -1,11 +1,3 @@
-import DC01 from "../../public/Icons/Section_Icons/DC01.png";
-import LS from "../../public/Icons/Section_Icons/LS.png";
-import AE from "../../public/Icons/Section_Icons/AE.png";
-import DC02 from "../../public/Icons/Section_Icons/DC02.png";
-import DS from "../../public/Icons/Section_Icons/DS.png";
-import FP from "../../public/Icons/Section_Icons/FP.png";
-
-
 
 const cardData = [
     {
