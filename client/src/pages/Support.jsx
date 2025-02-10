@@ -16,7 +16,7 @@ const Support = () => {
       {/* FAQs Tab Content */}
       {activeTab === "faqs" && (
         <div className="mt-4">
-          <h2 className="text-2xl font-bold text-blue-700">Frequently Asked Questions</h2>
+          <h2 className="text-2xl font-bold text-blue-700">Frequently Asked Questions </h2>
           <p className="text-gray-700 mt-2">Here you can find answers to the most common questions.</p>
         </div>
       )}
