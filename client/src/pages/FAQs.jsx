@@ -23,6 +23,21 @@ const FAQs = () => {
       content:
         "We help you combine multiple debts into a single loan with a lower interest rate, making repayment easier and more manageable.",
     },
+    {
+      title: "How can I improve my Credit Score?",
+      content:
+        "To improve your credit score, pay your bills on time, reduce credit card balances, avoid new credit inquiries, and maintain a good credit mix.",
+    },
+    {
+      title: "What happens if I miss a debt payment?",
+      content:
+        "Missing a debt payment can lower your credit score and may result in penalties or additional interest charges. It's best to contact your lender and discuss payment options.",
+    },
+    {
+      title: "Is Debt Settlement a good option?",
+      content:
+        "Debt settlement can help reduce your overall debt but may impact your credit score. It’s best suited for those facing severe financial hardship.",
+    },
   ];
 
   return (
@@ -36,15 +51,15 @@ const FAQs = () => {
 
       <div className="space-y-4">
         {faqItems.map((item, index) => (
-          <div key={index} className="border border-gray-200 rounded-lg">
+          <div key={index} className=" rounded-lg p-4">
             <button
               onClick={() => toggleAccordion(index)}
-              className="flex items-center justify-between w-full p-4 text-lg font-medium text-gray-700 bg-gray-100 hover:bg-green-500 hover:text-white rounded-lg transition"
+              className="flex items-center justify-between w-full text-lg font-medium text-gray-700 bg-gray-100 hover:bg-green-500 hover:text-white rounded-lg transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-green-400 py-3 px-4"
             >
               <span>{item.title}</span>
               <svg
-                className={`w-5 h-5 transition-transform ${
-                  openIndex === index ? "rotate-180" : "rotate-0"
+                className={`w-5 h-5 transform transition-transform duration-300 ${
+                  openIndex === index ? "rotate-0" : "rotate-180"
                 }`}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -60,11 +75,16 @@ const FAQs = () => {
               </svg>
             </button>
 
-            {openIndex === index && (
-              <div className="p-4 border-t border-gray-200 bg-white">
-                <p className="text-gray-600">{item.content}</p>
+            {/* Adjusted Content Container */}
+            <div
+              className={`grid transition-all duration-300 ease-in-out ${
+                openIndex === index ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+              }`}
+            >
+              <div className="overflow-hidden">
+                <p className="text-gray-600 mt-3">{item.content}</p>
               </div>
-            )}
+            </div>
           </div>
         ))}
       </div>

@@ -11,6 +11,7 @@ import FAQs from "./pages/FAQs"; // Create these pages
 import Support from "./pages/Support";
 import Plans from "./pages/Plans";
 import Profile from "./pages/Profile";
+import CreditReport from "./pages/CreditReport";
 
 // Layout for Public Pages (Shows Navbar & Footer)
 const PublicLayout = () => (
@@ -30,7 +31,7 @@ const DashboardLayout = () => (
     </div>
 
     {/* Main Content - Outlet */}
-    <div className="flex-1 flex flex-col p-4 overflow-auto">
+    <div className="flex-1 flex flex-col overflow-auto">
       <Outlet />
     </div>
   </div>
@@ -53,6 +54,7 @@ function App() {
           <Route path="support" element={<Support />} />
           <Route path="golden" element={<Plans />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="credit-report" element={<CreditReport />} />
         </Route>
 
         {/* Login & OTP Verification (No Navbar/Footer/Sidebar) */}

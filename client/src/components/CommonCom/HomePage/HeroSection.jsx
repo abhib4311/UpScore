@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import CTAButton from "../../CommonCom/Button";
-import Hero from "../../../../public/Images/hero.png";
-import speedometer from "../../../../public/Icons/speedometer.png";
+import Hero from "/Images/Hero.png";
+import speedometer from "/Icons/speedometer.png";
 
 const HeroSection01 = () => {
   const navigate = useNavigate();
