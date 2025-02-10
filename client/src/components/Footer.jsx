@@ -42,7 +42,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <span className="block text-sm text-gray-500 sm:text-center">
-          © 2024 <Link to="/" className="hover:underline">Your Company™</Link>. All Rights Reserved.
+          © 2025 <Link to="/" className="hover:underline">Up Score™</Link>. All Rights Reserved.
         </span>
       </div>
     </footer>

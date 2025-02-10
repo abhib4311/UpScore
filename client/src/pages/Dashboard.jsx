@@ -2,7 +2,7 @@ import { FaExclamationTriangle } from "react-icons/fa";
 import { AiOutlineDownload } from "react-icons/ai";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { BsGraphUp } from "react-icons/bs";
-import CTAButton from "../components/CommonCom/Button"; // Importing CTAButton
+import Button from "../components/CommonCom/Button"; // Importing Button
 
 const user = {
   name: "John Doe",
@@ -40,12 +40,12 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="flex justify-between">
-            <CTAButton active={true} onClick={() => alert("Downloading Report")}>
+            <Button active={true} onClick={() => alert("Downloading Report")}>
               Download Report <AiOutlineDownload className="inline ml-1 text-lg" />
-            </CTAButton>
-            <CTAButton active={true} onClick={() => alert("Viewing Credit Report")}>
+            </Button>
+            <Button active={true} onClick={() => alert("Viewing Credit Report")}>
               View Credit Report
-            </CTAButton>
+            </Button>
           </div>
         </div>
 
@@ -75,7 +75,7 @@ const InfoCard = ({ icon, title, description, buttonText }) => {
       <div className="flex flex-col gap-4 items-end">
         <p className="text-xl font-semibold text-gray-800">{title}</p>
         {description && <p className="text-gray-600 text-sm text-right">{description}</p>}
-        <CTAButton active={true} onClick={() => alert(buttonText)}>{buttonText}</CTAButton>
+        <Button active={true} onClick={() => alert(buttonText)}>{buttonText}</Button>
       </div>
     </div>
   );
