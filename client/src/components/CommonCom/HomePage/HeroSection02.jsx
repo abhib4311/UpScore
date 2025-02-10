@@ -5,7 +5,7 @@ import CTAStats from "../../CommonCom/Stats";
 import statsData from "../../../datas/StatsData";
 import { useNavigate } from "react-router-dom";
 
-const HeroSection02 = () => {
+const HeroSection02 = () => {  
   const isLoggedIn = false; // Replace with actual auth check
   const navigate = useNavigate();
   const handleButtonClick = () =>{
@@ -16,7 +16,7 @@ const HeroSection02 = () => {
     }
   }
   return (
-    <div className=" flex-col  sm:flex-row ">
+    <div className=" flex-col  sm:flex-row">
       <h1 className="text-5xl font-bold text-gray-900  ml-50  mb-1 mt-20 w-200 text-center ">
         You're Just a Few Steps Away from Financial Freedom!
       </h1>
