@@ -22,8 +22,8 @@ const getCreditColor = (score) => {
 const Dashboard = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col items-center min-h-screen px-6 py-10">
-      <div className="w-full max-w-4xl flex flex-col gap-10">
+    <div className="flex flex-col  h-full px-6 py-10">
+      <div className="w-full max-w-4xl flex flex-col gap-10 bg-white p-6 ">
         {/* Credit Score Overview */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -136,111 +136,88 @@ const InfoCard = ({ icon, title, subtitle, description, extraPoints, buttonText 
 
 export default Dashboard;
 
-// -------------------------------------------------------------------------------------------------------------
+
 // import React from "react";
 
 // const Dashboard = () => {
 //   return (
-//     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
-//       {/* Header */}
-//       <div className="w-full flex justify-between items-center bg-white shadow-md p-4 rounded-lg">
-//         <h1 className="text-xl font-semibold text-gray-700">Welcome, <span className="text-blue-600">User!</span></h1>
-//         <button className="bg-gray-200 p-2 rounded-lg text-gray-700">User</button>
-//       </div>
-
-//       {/* Banner Section */}
-//       <div className="w-full max-w-4xl bg-white shadow-md mt-6 p-6 rounded-lg flex flex-col md:flex-row items-center gap-4">
-//         <img
-//           src="https://via.placeholder.com/100"
-//           alt="Illustration"
-//           className="w-20 h-20"
-//         />
-//         <div>
-//           <h2 className="text-lg font-bold">One View of all your Bank Accounts</h2>
-//           <p className="text-gray-600">Get to know your spend pattern across your accounts - all in one place</p>
+//     <div className="bg-gray-100  p-8 flex flex-col gap-6">
+//       {/* Credit Score Section */}
+//       <div className="bg-white p-6 rounded-lg shadow-md">
+//         <div className="flex justify-between items-center mb-4">
+//           <h2 className="text-lg font-semibold">Hey Abhishek! Here's your Credit Score for Feb 25</h2>
+//           <span className="text-gray-500 text-sm">Next report on: 07 Mar 25</span>
 //         </div>
-//         <button className="bg-blue-600 text-white px-4 py-2 rounded-lg">Know More</button>
+//         <div className="flex items-center gap-6">
+//           <div className="text-center p-4 border rounded-lg bg-gray-50 w-36">
+//             <span className="text-4xl font-bold text-red-500">742</span>
+//             <p className="text-gray-600 text-sm">Your Score</p>
+//           </div>
+//           <div className="flex flex-col gap-1">
+//             <p className="text-red-500 font-medium">Your Credit Score needs attention!</p>
+//             <p className="text-gray-600 text-sm">Kick-start your score improvement journey with Credit Plus.</p>
+//           </div>
+//         </div>
+//         <button className="mt-4 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">Download Report</button>
 //       </div>
 
-//       {/* Recent Searches */}
-//       <div className="w-full max-w-4xl bg-white shadow-md mt-6 p-6 rounded-lg">
-//         <h2 className="text-lg font-bold">My Recent Searches</h2>
-//         <p className="text-gray-600 mt-2">
-//           You have not searched for any product in the last 30 days. Compare and apply for loan products and credit cards now. <a href="#" className="text-blue-600">Click here.</a>
-//         </p>
+//       {/* Bank Accounts Section */}
+//       <div className="bg-white p-6 rounded-lg shadow-md flex justify-between items-center">
+//         <div>
+//           <h3 className="text-lg font-semibold">One View of all your Bank Accounts</h3>
+//           <p className="text-gray-600 text-sm">Get to know your spend pattern across your accounts – all in one place.</p>
+//         </div>
+//         <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">Know More</button>
 //       </div>
 
-//       {/* Footer */}
+//       {/* Low Credit Score Section */}
+//       <div className="bg-white p-6 rounded-lg shadow-md text-center">
+//         <p className="text-red-500 font-semibold">You have a Low Credit Score</p>
+//         <p className="text-gray-600 text-sm">which might impact your Loan/Credit Card applications.</p>
+//         <button className="mt-4 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">Improve Your Score Now</button>
+//       </div>
+
+//       {/* Credit Health Report Section */}
+//       <div className="bg-white p-6 rounded-lg shadow-md text-center">
+//         <h3 className="text-lg font-semibold">Get your Credit Health Report to find out more!</h3>
+//         <button className="mt-4 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">Know more</button>
+//       </div>
+
+//       {/* Personalized Offers Section */}
+//       <div className="bg-white p-6 rounded-lg shadow-md">
+//         <h3 className="text-lg font-semibold mb-4">Personalized Offers</h3>
+//         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+//           {[
+//             {
+//               title: "CREDIT+ Score Improvement Service",
+//               description: "✔ No hard credit check\n✔ Personalized plan\n✔ Credit report tracking",
+//               buttonText: "Apply Now",
+//             },
+//             {
+//               title: "Paisabazaar StepUp Credit Card",
+//               description: "✔ Backed by FD\n✔ Build your credit score\n✔ Credit limit up to 200% of FD Amount",
+//               buttonText: "Apply Now",
+//             },
+//             {
+//               title: "Get Loan against your Mutual Fund Portfolio",
+//               description: "✔ Borrow up to 80% of MF value\n✔ No need for closure or insurance exchange",
+//               buttonText: "Check Now",
+//             },
+//           ].map((offer, index) => (
+//             <div key={index} className="border p-4 rounded-lg bg-gray-50 text-center">
+//               <h4 className="text-md font-semibold">{offer.title}</h4>
+//               <p className="text-gray-600 text-sm whitespace-pre-line">{offer.description}</p>
+//               <button className="mt-2 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">{offer.buttonText}</button>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
 //       <footer className="w-full text-center text-gray-500 text-sm mt-6">
-//         CIN No. U74900HR2011PTC044581 © Copyright 2014-2025 Paisabazaar.com. All Rights Reserved.<br/>
-//         *No. 1 in terms of loan disbursal as per industry estimates
-//       </footer>
+//          CIN No. U74900HR2011PTC044581 © Copyright 2014-2025 Paisabazaar.com. All Rights Reserved.<br/>
+//           *No. 1 in terms of loan disbursal as per industry estimates
+//      </footer>
 //     </div>
 //   );
 // };
 
 // export default Dashboard;
-
-
-// import { useState } from "react";
-// import { FaBars, FaRegUser, FaSignOutAlt, FaHeadset, FaBox, FaHome } from "react-icons/fa";
-
-// export default function Dashboard() {
-//   const [isOpen, setIsOpen] = useState(true);
-
-//   return (
-//     <div className="flex h-screen bg-gray-100">
-//       {/* Sidebar */}
-//       {/* <div className={`bg-white shadow-lg ${isOpen ? "w-64" : "w-20"} transition-all duration-300`}>
-//         <div className="flex items-center justify-between p-4">
-//           <h2 className={`text-xl font-bold ${!isOpen && "hidden"}`}>paisa<b>bazaar</b></h2>
-//           <button onClick={() => setIsOpen(!isOpen)} className="p-2">
-//             <FaBars size={20} />
-//           </button>
-//         </div>
-//         <nav className="mt-5">
-//           <MenuItem icon={<FaHome />} text="Dashboard" isOpen={isOpen} />
-//           <MenuItem icon={<FaBox />} text="Products" isOpen={isOpen} />
-//           <MenuItem icon={<FaHeadset />} text="Support" isOpen={isOpen} />
-//           <MenuItem icon={<FaSignOutAlt />} text="Log Out" isOpen={isOpen} />
-//         </nav>
-//       </div> */}
-
-//       {/* Main Content */}
-//       <div className="flex-1 p-6">
-//         {/* Header */}
-//         <div className="flex justify-between items-center bg-white p-4 rounded-lg shadow-md">
-//           <h1 className="text-2xl font-bold">Welcome, <span className="text-blue-600">User!</span></h1>
-//           <div className="flex items-center space-x-2">
-//             <FaRegUser size={20} />
-//             <span>User</span>
-//           </div>
-//         </div>
-
-//         {/* Banner */}
-//         <div className="bg-white p-6 mt-6 rounded-lg shadow-md flex items-center justify-between">
-//           <div>
-//             <h3 className="text-lg font-semibold">One View of all your Bank Accounts</h3>
-//             <p className="text-gray-600">Get to know your spend pattern across accounts - all in one place</p>
-//           </div>
-//           <button className="bg-blue-600 text-white px-4 py-2 rounded-lg">Know More</button>
-//         </div>
-
-//         {/* Recent Searches */}
-//         <div className="bg-white p-6 mt-6 rounded-lg shadow-md">
-//           <h3 className="text-lg font-semibold">My Recent Searches</h3>
-//           <p className="text-gray-500 mt-2">You have not searched for any product in the last 30 days.</p>
-//           <a href="#" className="text-blue-600 mt-2 inline-block">Click here</a>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// // Reusable Menu Item Component
-// const MenuItem = ({ icon, text, isOpen }) => (
-//   <div className="flex items-center space-x-3 p-4 hover:bg-gray-200 rounded-lg cursor-pointer">
-//     {icon}
-//     {isOpen && <span className="text-gray-700">{text}</span>}
-//   </div>
-// );

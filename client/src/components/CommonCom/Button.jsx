@@ -1,5 +1,6 @@
 const Button = ({ active, onClick, children }) => {
   return (
+    
     <button
       onClick={onClick}
       disabled={!active}
@@ -7,9 +8,16 @@ const Button = ({ active, onClick, children }) => {
         ${active ? "bg-green-500 text-white" : "bg-richblack-800"} 
         hover:bg-green-600 transition-all duration-200`}
     >
+      
       {children}
     </button>
   );
 };
 
 export default Button;
+{/* <motion.button
+  whileHover={{ scale: 1.1 }}
+  whileTap={{ scale: 0.9 }}
+>
+  Hover & Tap Me
+</motion.button> */}

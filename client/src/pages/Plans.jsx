@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const DownloadScore = () => {
   return (
-    <div className='max-w-4xl flex flex-col lg:flex-row mx-auto p-6 bg-white shadow-lg rounded-lg items-center space-y-6 mt-30 gap-10'>
+    <div className='flex bg-white lg:flex-row flex-col gap-25 mx-atuo  p-10 '>
       <div className='lg:w-[50%] flex  flex-col mt-10'>
         <div className=' flex gap-5 flex-row '>
             <div>
