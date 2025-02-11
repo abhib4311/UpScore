@@ -16,18 +16,19 @@ const HeroSection01 = () => {
   };
 
   return (
-    <div className="justify-between">
-      <div className="flex flex-col lg:flex-row gap-10 items-center w-300">
-        <div className="lg:w-[50%] flex gap-15 flex-col items-start">
+    <div className="">
+      <div className="flex flex-col lg:flex-row gap-10  ">
+        <div className="lg:w-[50%] flex gap-8 flex-col ">
           <h1 className="text-5xl font-bold text-gray-900">Caught in Debt trap?</h1>
-          <p className="text-xl text-justify text-gray-600 w-[90%]">
-            Drowning in debt and struggling to keep up? Don’t worry, we are here.
+          <i className="text-xl">Don't worry we are here to help you!</i>
+          <p className="text-xl text-justify text-gray-600 w-[90%] mt-5">
+          Struggling with debt? Our experts negotiate with creditors to lower payments and interest rates. Take control of your finances today!
           </p>
-
-          <div className="w-fit">
+      
+          <div className="w-fit mt-10">
             <Button active={true} onClick={handleButtonClick}>
               <div className="flex items-center gap-3 cursor-pointer">
-                Check credit score
+                Get start today
                 <img src="./Icons/speedometer.png" alt="speedometer" className="w-5 h-5" />
               </div>
             </Button>
