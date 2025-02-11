@@ -1,9 +1,10 @@
 import React from 'react'
 import Button from '../components/CommonCom/Button'
+import { Link } from "react-router-dom";
 
 const DownloadScore = () => {
   return (
-    <div className='flex  lg:flex-row flex-col gap-25 mx-atuo shadow-lg p-10 rounded-lg'>
+    <div className='max-w-4xl flex flex-col lg:flex-row mx-auto p-6 bg-white shadow-lg rounded-lg items-center space-y-6 mt-30 gap-10'>
       <div className='lg:w-[50%] flex  flex-col mt-10'>
         <div className=' flex gap-5 flex-row '>
             <div>
@@ -50,8 +51,8 @@ const DownloadScore = () => {
             
         </div>
         <p className='p-4 text-sm'>₹99 + GST for the first month.</p>
-        <div className="flex justify-center pb-5 w-full">
-            <Button linkto='/payment' active={true} >Continue</Button>
+        <div className="flex justify-center ">
+            <Link to="/payment" className="rounded-b w-full font-semibold bg-green-500 text-center text-white p-4">Continue</Link>
         </div>
       </div>
     </div>
