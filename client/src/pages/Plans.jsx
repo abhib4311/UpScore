@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from '../components/CommonCom/Button'
+import { Link } from "react-router-dom";
 
 const DownloadScore = () => {
   return (
@@ -50,8 +51,8 @@ const DownloadScore = () => {
             
         </div>
         <p className='p-4 text-sm'>₹99 + GST for the first month.</p>
-        <div className="flex justify-center pb-5 w-full">
-            <Button linkto='/payment' active={true} >Continue</Button>
+        <div className="flex justify-center ">
+            <Link to="/payment" className="rounded-b w-full font-semibold bg-green-500 text-center text-white p-4">Continue</Link>
         </div>
       </div>
     </div>
