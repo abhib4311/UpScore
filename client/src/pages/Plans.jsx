@@ -3,7 +3,7 @@ import Button from '../components/CommonCom/Button'
 
 const DownloadScore = () => {
   return (
-    <div className='flex  lg:flex-row flex-col gap-25 mx-atuo shadow-lg p-10 rounded-lg'>
+    <div className='flex bg-white lg:flex-row flex-col gap-25 mx-atuo  p-10 '>
       <div className='lg:w-[50%] flex  flex-col mt-10'>
         <div className=' flex gap-5 flex-row '>
             <div>
