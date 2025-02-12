@@ -14,7 +14,7 @@ const ServicesSection = () => {
     }
   }
   return (
-      <div className="flex flex-col items-center justify-center mx-auto max-w-screen-xl py-20">
+      <div className="flex flex-col items-center justify-center mx-auto max-w-screen-xl mt-20 ">
         <h1 className="text-5xl font-bold text-gray-900">
             Our Debt Relief Services!
         </h1>

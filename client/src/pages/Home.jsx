@@ -29,7 +29,7 @@ const Home = () => {
 
       {/* Cards Section with animation from bottom on scroll */}
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 space-x-5 space-y-6 mx-auto max-w-screen-xl py-20"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 space-x-5 space-y-6 mx-auto max-w-screen-xl "
         initial="hidden"
         whileInView="show"
         variants={{
