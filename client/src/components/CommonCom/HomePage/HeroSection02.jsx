@@ -4,7 +4,6 @@ import { FaArrowRight } from "react-icons/fa";
 import CTAStats from "../../CommonCom/Stats";
 import statsData from "../../../datas/StatsData";
 import { useNavigate } from "react-router-dom";
-import AnimatedNumber from "../AnimatedNumber";
 
 import StatsSection from "../../StatsSection";
 
@@ -24,7 +23,9 @@ const HeroSection02 = () => {
       <div className="flex flex-col lg:flex-row gap-0 items-center w-11/12 mx-auto">
         <div className="lg:w-[50%] flex gap-15 flex-col items-start">
           <p className="font-medium text-xl text-justify w-[60%] text-gray-600">
-            We understand the burden of debt, and we're here to guide you toward a stress-free future. Let’s create a personalized plan that works for you!
+            We understand the burden of debt, and we're here to guide you toward
+            a stress-free future. Let’s create a personalized plan that works
+            for you!
           </p>
           <div className="w-fit mt-0">
             <Button active={true} onClick={handleButtonClick}>
@@ -42,8 +43,13 @@ const HeroSection02 = () => {
             alt="image"
             className="shadow-white shadow-[-20px_-20px_0_0] w-2xl"
           />
-        <div className="lg:w-[40%] mt-10 min-w-[300px]">
-          <img src="./Images/Hero02.png" alt="image" className="shadow-white shadow-[-20px_-20px_0_0] w-2xl" />
+          <div className="lg:w-[40%] mt-10 min-w-[300px]">
+            <img
+              src="./Images/Hero02.png"
+              alt="image"
+              className="shadow-white shadow-[-20px_-20px_0_0] w-2xl"
+            />
+          </div>
         </div>
       </div>
       <StatsSection />
