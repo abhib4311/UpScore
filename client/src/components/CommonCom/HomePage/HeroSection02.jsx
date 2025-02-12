@@ -4,17 +4,18 @@ import { FaArrowRight } from "react-icons/fa";
 import CTAStats from "../../CommonCom/Stats";
 import statsData from "../../../datas/StatsData";
 import { useNavigate } from "react-router-dom";
+import StatsSection from "../../StatsSection";
 
-const HeroSection02 = () => {  
+const HeroSection02 = () => {
   const isLoggedIn = false; // Replace with actual auth check
   const navigate = useNavigate();
-  const handleButtonClick = () =>{
+  const handleButtonClick = () => {
     if (isLoggedIn) {
       navigate("/dashboard");
-    } else {  
+    } else {
       navigate("/login");
     }
-  }
+  };
   return (
     <div className=" flex-col  sm:flex-row">
       <h1 className="text-5xl font-bold text-gray-900  ml-50  mb-1 mt-20 w-200 text-center ">
@@ -40,28 +41,13 @@ const HeroSection02 = () => {
 
         <div className="lg:w-[40%] mt-10  min-w-[300px]">
           <img
-            src= "./Images/Hero02.png"
+            src="./Images/Hero02.png"
             alt="image"
             className="shadow-white shadow-[-20px_-20px_0_0] w-2xl"
           />
         </div>
       </div>
-
-      <div className="flex flex-col lg:flex-row   items-center bg-green-500 text-white w-full mt-5 mx-auto max-w-screen-xl ">    
-        {statsData.map((stat, index) =>{
-            return(
-                <CTAStats key = {index} icon = {stat.icon}>
-                <div>
-                    <p className="text-lg">{stat.para}</p> 
-                    <p className="text-2xl font-bold">{stat.heading}</p>
-                </div>
-                </CTAStats>
-            )
-        })
-
-        }
-      </div>
-
+      <StatsSection />
     </div>
   );
 };
