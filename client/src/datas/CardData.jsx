@@ -77,7 +77,7 @@ const creditScore = {
     {
       icon: <FaLightbulb className="text-green-600 text-4xl mx-auto" />,
       title: "Understand Your Score",
-      description: "We’ll break it down & suggest improvements.",
+      description: "We’ll break it down & suggest improvements for you.",
     },
   ],
 };
